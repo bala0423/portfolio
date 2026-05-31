@@ -17,7 +17,7 @@ const About = () => {
 
                     <div className="max-w-4xl mx-auto text-slate-300 leading-relaxed space-y-6 text-lg">
                         <p>
-                            I am a passionate <span className="text-cyan-400 font-semibold">Data Scientist</span> with over <span className="font-semibold text-white">7 years</span> of experience in turning data into strategic assets. Currently working at <span className="font-semibold text-white">Johnson Electric</span>, I specialize in building robust machine learning models and deploying them to solve real-world problems.
+                            I am a passionate <span className="text-cyan-400 font-semibold">Data Science Engineer</span> with over <span className="font-semibold text-white">8 years</span> of experience in turning data into strategic assets. Currently working at <span className="font-semibold text-white">Johnson Electric</span>, I specialize in building robust machine learning models and deploying them to solve real-world problems.
                         </p>
                         <p>
                             My expertise spans across the entire data science lifecycle — from data engineering and exploratory analysis to model development and deployment. I have a strong foundation in <span className="text-white">Python, Machine Learning, and Deep Learning</span>, with a recent focus on <span className="text-purple-400 font-semibold">Generative AI and LLMs</span>.

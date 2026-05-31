@@ -33,13 +33,13 @@ const Hero = () => {
                     </h1>
 
                     <h2 className="text-2xl md:text-3xl text-slate-300 mb-8 font-light flex flex-col md:flex-row items-center justify-center gap-2">
-                        <span>Data Scientist at</span>
+                        <span>Data Science Engineer at</span>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-semibold">Johnson Electric</span>
                     </h2>
 
                     <p className="text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed text-lg">
                         Specializing in transforming complex data into actionable insights.
-                        Expert in Python, Machine Learning, and Generative AI with 7+ years of experience.
+                        Expert in Python, Machine Learning, and Generative AI with 8+ years of experience.
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -54,7 +54,7 @@ const Hero = () => {
                     </div>
 
                     <div className="mt-16 flex justify-center gap-8">
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors transform hover:scale-110">
+                        <a href="https://github.com/bala0423" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors transform hover:scale-110">
                             <Github size={28} />
                         </a>
                         <a href="https://www.linkedin.com/in/bala0423/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-blue-400 transition-colors transform hover:scale-110">

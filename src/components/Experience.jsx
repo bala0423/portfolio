@@ -6,17 +6,70 @@ const Experience = () => {
     const experiences = [
         {
             company: 'Johnson Electric',
-            role: 'Data Scientist',
-            duration: 'Present',
-            description: 'Leading data science initiatives to optimize manufacturing processes and improve quality control. Developing predictive maintenance models and leveraging GenAI for internal tools.',
+            role: 'Data Science Engineer',
+            duration: 'Jan 2024 - Present',
+            description: 'Leading data science initiatives to optimize manufacturing processes and improve quality control. Developing predictive maintenance models and leveraging GenAI/LLMs for internal automation and knowledge systems.',
             achievements: [
-                'Spearheaded the development of machine learning models for anomaly detection.',
-                'Implemented end-to-end data pipelines using Azure and Databricks.',
-                'Mentored junior data scientists and collaborated with cross-functional teams.'
+                'Spearheaded the development of machine learning models for anomaly detection and predictive quality control.',
+                'Implemented end-to-end data pipelines using Azure and Databricks to process high-velocity telemetry data.',
+                'Created Generative AI-powered search tools to extract insights from engineering documentation.'
             ]
         },
-        // Placeholder for previous roles if any, based on "7+ years" implies more history or long tenure.
-        // Assuming mostly Johnson Electric or willing to add others later.
+        {
+            company: 'Resulticks',
+            role: 'Software Engineer',
+            duration: 'May 2023 - Aug 2023',
+            description: 'Contributed to the development of real-time marketing automation platforms, focusing on high-throughput data processing and application reliability.',
+            achievements: [
+                'Optimized API performance and reduced latency for high-traffic messaging endpoints.',
+                'Enhanced core features of the marketing automation pipeline using Node.js and SQL/NoSQL databases.',
+                'Participated in database schema design and optimized query execution paths for customer profiles.'
+            ]
+        },
+        {
+            company: 'bitsCrunch',
+            role: 'Data Engineer',
+            duration: 'Jun 2022 - Apr 2023',
+            description: 'Designed and built scalable data infrastructure for blockchain analytics, focused on processing decentralized data and NFT transaction histories.',
+            achievements: [
+                'Architected high-throughput data ingestion pipelines to index and process blockchain transactions.',
+                'Engineered real-time and batch pipelines using Python, Apache Spark, and cloud data warehouses.',
+                'Ensured data quality and consistency across multi-chain data sources for wash trading detection.'
+            ]
+        },
+        {
+            company: 'Optisol Business Solutions',
+            role: 'Data Engineer',
+            duration: 'Sep 2021 - Jun 2022',
+            description: 'Developed robust ETL/ELT pipelines and managed cloud data warehouse solutions for enterprise clients.',
+            achievements: [
+                'Designed data integration workflows to migrate legacy databases to AWS/Azure cloud platforms.',
+                'Optimized complex SQL queries and data transformations to reduce processing costs and execution time.',
+                'Implemented comprehensive data validation frameworks to monitor pipeline health.'
+            ]
+        },
+        {
+            company: 'Optisol Business Solutions',
+            role: 'Machine Learning Engineer',
+            duration: 'Aug 2019 - Sep 2021',
+            description: 'Built, evaluated, and deployed machine learning models to solve business problems in computer vision and natural language processing.',
+            achievements: [
+                'Trained and deployed object detection and classification models for automated visual inspection.',
+                'Developed NLP pipelines using BERT and custom transformer architectures for document parsing.',
+                'Created Flask/FastAPI microservices to serve model predictions in production environments.'
+            ]
+        },
+        {
+            company: 'Trumatics Software labs',
+            role: 'Software Engineer',
+            duration: 'Jun 2018 - Jul 2019',
+            description: 'Started professional journey by developing web applications and backend systems using Python and Java.',
+            achievements: [
+                'Developed RESTful APIs and backend services using Django/Spring Boot frameworks.',
+                'Collaborated on frontend interface development with React and modern JavaScript.',
+                'Participated in agile ceremonies, writing unit tests and code documentation to improve codebase reliability.'
+            ]
+        }
     ];
 
     return (
