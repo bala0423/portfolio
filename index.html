@@ -3,13 +3,72 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="/rbk.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balakumaran</title>
+  <meta name="theme-color" content="#090e1a" />
+  <!-- Apply a saved colour theme before first paint to avoid a flash. Keys match src/components/ThemeToggle.jsx. -->
+  <script>
+    (function () {
+      var colors = { midnight: '#090e1a', mint: '#f0fdf4' };
+      try {
+        var t = localStorage.getItem('theme');
+        if (t && colors[t]) {
+          document.documentElement.setAttribute('data-theme', t);
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', colors[t]);
+        }
+      } catch (e) { /* storage blocked: keep the default theme */ }
+    })();
+  </script>
+  <title>Balakumaran R | GenAI / AI Engineer</title>
+  <meta name="description"
+    content="Balakumaran R, GenAI / AI Engineer in Chennai, India with 8 years across generative AI, machine learning and data engineering. LLM applications, agentic AI and RAG." />
+  <meta name="author" content="Balakumaran R" />
+  <link rel="canonical" href="https://balakumaran.in" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://balakumaran.in" />
+  <meta property="og:site_name" content="Balakumaran R" />
+  <meta property="og:title" content="Balakumaran R | GenAI / AI Engineer" />
+  <meta property="og:description"
+    content="GenAI / AI Engineer | LLM Applications • Agentic AI • RAG • Machine Learning • Data Engineering. Chennai, India | Open to Relocation." />
+  <!-- TODO: add a 1200x630 PNG/JPG share image (e.g. public/og-image.png) and uncomment:
+  <meta property="og:image" content="https://balakumaran.in/og-image.png" />
+  <meta name="twitter:image" content="https://balakumaran.in/og-image.png" />
+  -->
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Balakumaran R | GenAI / AI Engineer" />
+  <meta name="twitter:description"
+    content="GenAI / AI Engineer | LLM Applications • Agentic AI • RAG • Machine Learning • Data Engineering." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Balakumaran R",
+    "jobTitle": "GenAI / AI Engineer",
+    "email": "mailto:balakumaranrinfo@gmail.com",
+    "telephone": "+91 96772 66036",
+    "url": "https://balakumaran.in",
+    "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressCountry": "IN" },
+    "worksFor": { "@type": "Organization", "name": "Johnson Electric" },
+    "sameAs": ["https://www.linkedin.com/in/bala0423/"]
+  }
+  </script>
+
+  <!-- Without JavaScript, show pre-rendered content that animations would otherwise keep hidden. -->
+  <noscript>
+    <style>
+      #root [style*="opacity"] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 </head>
 
 <body>
-  <div id="root"></div>
+  <!-- The build (scripts/prerender.js) replaces the placeholder below with the full rendered page. -->
+  <div id="root"><!--app-html--></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Green gradient for borders and text -->
+    <linearGradient id="rbk-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" /> <!-- green-500 -->
+      <stop offset="100%" stop-color="#15803d" /> <!-- green-700 -->
+    </linearGradient>
+    
+    <!-- Light background gradient matching the white and green theme -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" /> <!-- white -->
+      <stop offset="100%" stop-color="#f0fdf4" /> <!-- green-50 -->
+    </linearGradient>
+
+    <!-- Subtle drop shadow/glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background squircle shape matching the tech aesthetic -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#bg-grad)" stroke="url(#rbk-grad)" stroke-width="16" />
+
+  <!-- Glowing background effect behind letters -->
+  <circle cx="256" cy="256" r="160" fill="#4ade80" opacity="0.08" filter="url(#glow)" />
+
+  <!-- Monogram text "RBK" styled and centered -->
+  <text x="256" y="278" 
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="150" 
+        font-weight="900" 
+        fill="url(#rbk-grad)" 
+        text-anchor="middle" 
+        dominant-baseline="middle"
+        letter-spacing="-2"
+        filter="url(#glow)">
+    RBK
+  </text>
+</svg>

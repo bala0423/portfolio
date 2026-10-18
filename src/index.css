@@ -2,10 +2,143 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Themes. Each value is an RGB triplet used by the Tailwind colour tokens in
+ * tailwind.config.js. Midnight is the dark theme and the default (no data-theme
+ * attribute). Mint is the light theme. The toggle in the navbar sets data-theme on <html>.
+ */
+:root,
+[data-theme='midnight'] {
+  color-scheme: dark;
+  --surface: 9 14 26;
+  --surface-alt: 15 23 42;
+  --ink: 248 250 252;
+  --body: 226 232 240;
+  --soft: 148 163 184;
+  --muted: 100 116 139;
+  --line: 30 41 59;
+  --line-strong: 51 65 85;
+  --primary: 52 211 153;
+  --primary-strong: 110 231 183;
+  --brand: 16 185 129;
+  --brand-hover: 52 211 153;
+  --on-brand: 2 44 34;
+  --tint: 13 51 43;
+  --tint-strong: 6 78 59;
+  --grad-from: 52 211 153;
+  --grad-to: 45 212 191;
+  --grad-end: 163 230 53;
+  --blob1: 16 185 129;
+  --blob2: 20 184 166;
+  --blob3: 132 204 22;
+  --blob-blend: screen;
+  --blob-opacity: 0.14;
+  --glow: 16 185 129;
+  --grid: 148 163 184;
+}
+
+[data-theme='mint'] {
+  color-scheme: light;
+  --surface: 255 255 255;
+  --surface-alt: 240 253 244;
+  --ink: 15 23 42;
+  --body: 51 65 85;
+  --soft: 71 85 105;
+  --muted: 100 116 139;
+  --line: 220 252 231;
+  --line-strong: 187 247 208;
+  --primary: 22 163 74;
+  --primary-strong: 21 128 61;
+  --brand: 22 163 74;
+  --brand-hover: 34 197 94;
+  --on-brand: 255 255 255;
+  --tint: 220 252 231;
+  --tint-strong: 187 247 208;
+  --grad-from: 22 163 74;
+  --grad-to: 16 185 129;
+  --grad-end: 163 230 53;
+  --blob1: 217 249 157;
+  --blob2: 187 247 208;
+  --blob3: 167 243 208;
+  --blob-blend: multiply;
+  --blob-opacity: 0.4;
+  --glow: 34 197 94;
+  --grid: 22 101 52;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-slate-900 text-white font-sans;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.blob {
+  mix-blend-mode: var(--blob-blend);
+  opacity: var(--blob-opacity);
+}
+
+body {
+  @apply bg-surface text-body font-sans;
+}
+
+/* Section anchors land below the fixed navbar. */
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+/* Faint grid behind the hero, fading out toward the edges. */
+.bg-grid {
+  background-image:
+    linear-gradient(rgb(var(--grid) / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--grid) / 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* Glow that follows the pointer; --x/--y are set from JS. */
+.spotlight {
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 40%), rgb(var(--glow) / 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.card-spotlight {
+  position: relative;
+}
+
+.card-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(400px circle at var(--x, 50%) var(--y, 50%), rgb(var(--glow) / 0.10), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.card-spotlight:hover::before {
+  opacity: 1;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-blob,
+  .animate-shimmer,
+  .animate-bounce {
+    animation: none;
+  }
 }

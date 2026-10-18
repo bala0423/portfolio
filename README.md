@@ -34,5 +34,16 @@ The site is configured to deploy to GitHub Pages.
 npm run deploy
 ```
 
+`npm run deploy` builds the site and pushes `dist/` to the `gh-pages` branch, which GitHub Pages serves at https://balakumaran.in (custom domain from `public/CNAME`).
+
+The build pre-renders the page to static HTML (`src/entry-server.jsx` + `scripts/prerender.js`), so crawlers and link previews see the full content without JavaScript. Preview the production build locally with:
+
+```bash
+npm run build
+npm run preview
+```
+
+The "Download Resume" button links to `/Balakumaran_R_Resume.pdf`. Put the PDF at `public/Balakumaran_R_Resume.pdf`.
+
 ## 📝 License
 MIT
