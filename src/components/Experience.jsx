@@ -1,7 +1,13 @@
+import { useRef } from 'react';
 import { Briefcase } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 const Experience = () => {
+    const timelineRef = useRef(null);
+    // Fill the timeline line as the visitor scrolls through it.
+    const { scrollYProgress } = useScroll({ target: timelineRef, offset: ['start 70%', 'end 60%'] });
+    const fill = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+
     const experiences = [
         {
             company: 'Johnson Electric',
@@ -93,9 +99,14 @@ const Experience = () => {
                     Professional Experience
                 </motion.h2>
 
-                <div className="max-w-4xl mx-auto relative">
+                <div ref={timelineRef} className="max-w-4xl mx-auto relative">
                     {/* Timeline Line */}
                     <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-slate-800 rounded-full"></div>
+                    <motion.div
+                        aria-hidden="true"
+                        style={{ scaleY: fill }}
+                        className="absolute left-0 md:left-[calc(50%-2px)] h-full w-1 origin-top rounded-full bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500 shadow-[0_0_12px_rgba(6,182,212,0.6)]"
+                    ></motion.div>
 
                     {experiences.map((exp, index) => (
                         <motion.div
@@ -109,10 +120,16 @@ const Experience = () => {
                             <div className="flex-1 w-full md:w-1/2"></div>
 
                             {/* Timeline Dot */}
-                            <div className="absolute left-[-11px] md:left-1/2 md:-ml-3 w-6 h-6 bg-cyan-500 rounded-full border-4 border-slate-950 z-10 shadow-[0_0_15px_rgba(6,182,212,0.5)]"></div>
+                            <motion.div
+                                initial={{ scale: 0.4 }}
+                                whileInView={{ scale: 1 }}
+                                viewport={{ once: true, margin: '-30% 0px' }}
+                                transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                                className="absolute left-[-11px] md:left-1/2 md:-ml-3 w-6 h-6 bg-cyan-500 rounded-full border-4 border-slate-950 z-10 shadow-[0_0_15px_rgba(6,182,212,0.5)]"
+                            ></motion.div>
 
                             <div className="flex-1 w-full md:w-1/2 pl-6 md:pl-0">
-                                <div className={`bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-colors ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                                <div className={`bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.35)] transition-all duration-300${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                                     <div className={`flex items-center gap-3 mb-2 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                                         <Briefcase className="text-cyan-400" size={20} />
                                         <h3 className="text-xl font-bold text-white">{exp.role}</h3>

@@ -1,7 +1,27 @@
-import { Mail, Linkedin, Send, Phone, MapPin } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Mail, Linkedin, Send, Phone, MapPin, Copy, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+const EMAIL = 'balakumaranrinfo@gmail.com';
+
 const Contact = () => {
+    const [copied, setCopied] = useState(false);
+
+    useEffect(() => {
+        if (!copied) return;
+        const id = setTimeout(() => setCopied(false), 2000);
+        return () => clearTimeout(id);
+    }, [copied]);
+
+    const copyEmail = async () => {
+        try {
+            await navigator.clipboard.writeText(EMAIL);
+            setCopied(true);
+        } catch {
+            window.location.href = `mailto:${EMAIL}`;
+        }
+    };
+
     return (
         <section id="contact" className="py-20 bg-slate-950 relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
@@ -33,9 +53,20 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3 className="text-white font-semibold mb-1">Email Me</h3>
-                                <a href="mailto:balakumaranrinfo@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors break-all">
-                                    balakumaranrinfo@gmail.com
-                                </a>
+                                <div className="flex flex-wrap items-center gap-2">
+                                    <a href="mailto:balakumaranrinfo@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors break-all">
+                                        balakumaranrinfo@gmail.com
+                                    </a>
+                                    <button
+                                        type="button"
+                                        onClick={copyEmail}
+                                        aria-label="Copy email address"
+                                        className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs border transition-colors ${copied ? 'border-emerald-500/60 text-emerald-400' : 'border-slate-700 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/60'}`}
+                                    >
+                                        {copied ? <Check size={14} /> : <Copy size={14} />}
+                                        <span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
