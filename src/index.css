@@ -4,8 +4,8 @@
 
 /*
  * Themes. Each value is an RGB triplet used by the Tailwind colour tokens in
- * tailwind.config.js. The default (no data-theme attribute) is Midnight.
- * The picker in the navbar sets data-theme on <html>.
+ * tailwind.config.js. Midnight is the dark theme and the default (no data-theme
+ * attribute). Mint is the light theme. The toggle in the navbar sets data-theme on <html>.
  */
 :root,
 [data-theme='midnight'] {
@@ -64,64 +64,6 @@
   --blob-opacity: 0.4;
   --glow: 34 197 94;
   --grid: 22 101 52;
-}
-
-[data-theme='sunset'] {
-  color-scheme: light;
-  --surface: 255 251 245;
-  --surface-alt: 255 247 237;
-  --ink: 28 25 23;
-  --body: 68 64 60;
-  --soft: 87 83 78;
-  --muted: 120 113 108;
-  --line: 255 237 213;
-  --line-strong: 254 215 170;
-  --primary: 234 88 12;
-  --primary-strong: 194 65 12;
-  --brand: 234 88 12;
-  --brand-hover: 249 115 22;
-  --on-brand: 255 255 255;
-  --tint: 255 237 213;
-  --tint-strong: 254 215 170;
-  --grad-from: 234 88 12;
-  --grad-to: 225 29 72;
-  --grad-end: 245 158 11;
-  --blob1: 253 230 138;
-  --blob2: 254 215 170;
-  --blob3: 254 205 211;
-  --blob-blend: multiply;
-  --blob-opacity: 0.45;
-  --glow: 249 115 22;
-  --grid: 154 52 18;
-}
-
-[data-theme='lavender'] {
-  color-scheme: light;
-  --surface: 255 255 255;
-  --surface-alt: 245 243 255;
-  --ink: 30 27 75;
-  --body: 51 65 85;
-  --soft: 71 85 105;
-  --muted: 100 116 139;
-  --line: 237 233 254;
-  --line-strong: 221 214 254;
-  --primary: 124 58 237;
-  --primary-strong: 109 40 217;
-  --brand: 124 58 237;
-  --brand-hover: 139 92 246;
-  --on-brand: 255 255 255;
-  --tint: 237 233 254;
-  --tint-strong: 221 214 254;
-  --grad-from: 124 58 237;
-  --grad-to: 219 39 119;
-  --grad-end: 168 85 247;
-  --blob1: 221 214 254;
-  --blob2: 251 207 232;
-  --blob3: 233 213 255;
-  --blob-blend: multiply;
-  --blob-opacity: 0.5;
-  --glow: 139 92 246;
-  --grid: 76 29 149;
 }
 
 html {

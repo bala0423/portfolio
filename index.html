@@ -6,10 +6,10 @@
   <link rel="icon" type="image/svg+xml" href="/rbk.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#090e1a" />
-  <!-- Apply a saved colour theme before first paint to avoid a flash. Keys match src/components/ThemePicker.jsx. -->
+  <!-- Apply a saved colour theme before first paint to avoid a flash. Keys match src/components/ThemeToggle.jsx. -->
   <script>
     (function () {
-      var colors = { midnight: '#090e1a', mint: '#f0fdf4', sunset: '#fff7ed', lavender: '#f5f3ff' };
+      var colors = { midnight: '#090e1a', mint: '#f0fdf4' };
       try {
         var t = localStorage.getItem('theme');
         if (t && colors[t]) {
