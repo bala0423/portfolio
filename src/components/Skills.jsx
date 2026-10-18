@@ -43,17 +43,17 @@ const Skills = () => {
     const shown = active === 'All' ? skillGroups : skillGroups.filter((g) => g.title === active);
 
     return (
-        <section id="skills" className="py-20 bg-white relative overflow-hidden">
+        <section id="skills" className="py-20 bg-surface relative overflow-hidden">
             {/* Background decorations */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-green-200/40 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-lime-200/40 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blob2/40 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blob1/40 rounded-full blur-3xl"></div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-4xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500"
+                    className="text-3xl md:text-4xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-grad-from to-grad-to"
                 >
                     Technical Skills
                 </motion.h2>
@@ -65,12 +65,12 @@ const Skills = () => {
                             type="button"
                             onClick={() => setActive(tab)}
                             aria-pressed={active === tab}
-                            className={`relative px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors ${active === tab ? 'text-white' : 'text-slate-600 hover:text-slate-900'}`}
+                            className={`relative px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors ${active === tab ? 'text-on-brand' : 'text-soft hover:text-ink'}`}
                         >
                             {active === tab && (
                                 <motion.span
                                     layoutId="skill-tab"
-                                    className="absolute inset-0 rounded-full bg-green-600 shadow-lg shadow-green-500/20"
+                                    className="absolute inset-0 rounded-full bg-brand shadow-lg shadow-glow/20"
                                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                                 />
                             )}
@@ -92,7 +92,7 @@ const Skills = () => {
                             {shown.map((group) => (
                                 <div key={group.title}>
                                     {active === 'All' && (
-                                        <h3 className="text-green-600 font-medium tracking-wider text-sm uppercase mb-4 text-center">
+                                        <h3 className="text-primary font-medium tracking-wider text-sm uppercase mb-4 text-center">
                                             {group.title}
                                         </h3>
                                     )}
@@ -105,7 +105,7 @@ const Skills = () => {
                                                 viewport={{ once: true }}
                                                 transition={{ delay: Math.min(i * 0.03, 0.3), duration: 0.25 }}
                                                 whileHover={{ y: -4, scale: 1.05 }}
-                                                className="px-4 py-2 sm:px-6 sm:py-3 bg-green-50/70 rounded-full border border-green-200 text-slate-700 text-sm sm:text-base hover:text-slate-900 hover:border-green-500 hover:bg-green-100 transition-colors cursor-default shadow-sm hover:shadow-[0_0_15px_rgba(34,197,94,0.3)]"
+                                                className="px-4 py-2 sm:px-6 sm:py-3 bg-tint/60 rounded-full border border-line-strong text-body text-sm sm:text-base hover:text-ink hover:border-primary hover:bg-tint transition-colors cursor-default shadow-sm hover:shadow-[0_0_15px_rgb(var(--glow)/0.3)]"
                                             >
                                                 {skill}
                                             </motion.div>

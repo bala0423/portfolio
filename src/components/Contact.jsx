@@ -23,7 +23,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-20 bg-green-50 relative overflow-hidden">
+        <section id="contact" className="py-20 bg-surface-alt relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -31,11 +31,11 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="max-w-4xl mx-auto text-center mb-16"
                 >
-                    <span className="text-green-600 font-medium tracking-wider text-sm uppercase">Get in Touch</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-green-600">
+                    <span className="text-primary font-medium tracking-wider text-sm uppercase">Get in Touch</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-ink to-grad-from">
                         Let's Work Together
                     </h2>
-                    <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-soft text-lg max-w-2xl mx-auto">
                         I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
                     </p>
                 </motion.div>
@@ -48,20 +48,20 @@ const Contact = () => {
                         className="space-y-8"
                     >
                         <div className="flex items-start gap-4">
-                            <div className="bg-green-100 p-3 rounded-lg text-green-600">
+                            <div className="bg-tint p-3 rounded-lg text-primary">
                                 <Mail size={24} />
                             </div>
                             <div>
-                                <h3 className="text-slate-900 font-semibold mb-1">Email Me</h3>
+                                <h3 className="text-ink font-semibold mb-1">Email Me</h3>
                                 <div className="flex flex-wrap items-center gap-2">
-                                    <a href="mailto:balakumaranrinfo@gmail.com" className="text-slate-600 hover:text-green-600 transition-colors break-all">
+                                    <a href="mailto:balakumaranrinfo@gmail.com" className="text-soft hover:text-primary transition-colors break-all">
                                         balakumaranrinfo@gmail.com
                                     </a>
                                     <button
                                         type="button"
                                         onClick={copyEmail}
                                         aria-label="Copy email address"
-                                        className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs border transition-colors ${copied ? 'border-green-500 text-green-700' : 'border-green-200 text-slate-600 hover:text-green-600 hover:border-green-400'}`}
+                                        className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs border transition-colors ${copied ? 'border-primary text-primary-strong' : 'border-line-strong text-soft hover:text-primary hover:border-primary/60'}`}
                                     >
                                         {copied ? <Check size={14} /> : <Copy size={14} />}
                                         <span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
@@ -71,44 +71,44 @@ const Contact = () => {
                         </div>
 
                         <div className="flex items-start gap-4">
-                            <div className="bg-green-100 p-3 rounded-lg text-green-600">
+                            <div className="bg-tint p-3 rounded-lg text-primary">
                                 <Phone size={24} />
                             </div>
                             <div>
-                                <h3 className="text-slate-900 font-semibold mb-1">Phone</h3>
-                                <a href="tel:+919677266036" className="text-slate-600 hover:text-green-600 transition-colors">
+                                <h3 className="text-ink font-semibold mb-1">Phone</h3>
+                                <a href="tel:+919677266036" className="text-soft hover:text-primary transition-colors">
                                     +91 96772 66036
                                 </a>
                             </div>
                         </div>
 
                         <div className="flex items-start gap-4">
-                            <div className="bg-green-100 p-3 rounded-lg text-green-600">
+                            <div className="bg-tint p-3 rounded-lg text-primary">
                                 <MapPin size={24} />
                             </div>
                             <div>
-                                <h3 className="text-slate-900 font-semibold mb-1">Location</h3>
-                                <p className="text-slate-600">Chennai, India | Open to Relocation</p>
+                                <h3 className="text-ink font-semibold mb-1">Location</h3>
+                                <p className="text-soft">Chennai, India | Open to Relocation</p>
                             </div>
                         </div>
 
                         <div className="flex items-start gap-4">
-                            <div className="bg-green-100 p-3 rounded-lg text-green-600">
+                            <div className="bg-tint p-3 rounded-lg text-primary">
                                 <Linkedin size={24} />
                             </div>
                             <div>
-                                <h3 className="text-slate-900 font-semibold mb-1">LinkedIn</h3>
-                                <a href="https://www.linkedin.com/in/bala0423/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-green-600 transition-colors">
+                                <h3 className="text-ink font-semibold mb-1">LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/bala0423/" target="_blank" rel="noopener noreferrer" className="text-soft hover:text-primary transition-colors">
                                     linkedin.com/in/bala0423
                                 </a>
                             </div>
                         </div>
 
-                        <div className="p-6 bg-white rounded-2xl border border-green-100 mt-8">
-                            <p className="text-slate-700 italic">
+                        <div className="p-6 bg-surface rounded-2xl border border-line mt-8">
+                            <p className="text-body italic">
                                 "Data is the new oil. It's valuable, but if unrefined it cannot really be used."
                             </p>
-                            <p className="text-slate-500 mt-4 text-sm">— Clive Humby</p>
+                            <p className="text-muted mt-4 text-sm">— Clive Humby</p>
                         </div>
                     </motion.div>
 
@@ -126,7 +126,7 @@ const Contact = () => {
                                 type="text"
                                 name="name"
                                 placeholder="Your Name"
-                                className="w-full px-4 py-3 bg-white border border-green-200 rounded-lg focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none text-slate-800 transition-all"
+                                className="w-full px-4 py-3 bg-surface border border-line-strong rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body transition-all"
                                 required
                             />
                         </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                                 type="email"
                                 name="email"
                                 placeholder="Your Email"
-                                className="w-full px-4 py-3 bg-white border border-green-200 rounded-lg focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none text-slate-800 transition-all"
+                                className="w-full px-4 py-3 bg-surface border border-line-strong rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body transition-all"
                                 required
                             />
                         </div>
@@ -144,13 +144,13 @@ const Contact = () => {
                                 name="message"
                                 placeholder="Your Message"
                                 rows="4"
-                                className="w-full px-4 py-3 bg-white border border-green-200 rounded-lg focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none text-slate-800 transition-all resize-none"
+                                className="w-full px-4 py-3 bg-surface border border-line-strong rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body transition-all resize-none"
                                 required
                             ></textarea>
                         </div>
                         <button
                             type="submit"
-                            className="w-full py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-500 hover:to-emerald-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-green-500/25 transition-all flex items-center justify-center gap-2"
+                            className="w-full py-3 bg-gradient-to-r from-grad-from to-grad-to hover:from-grad-from hover:to-primary-strong text-on-brand font-semibold rounded-lg shadow-lg hover:shadow-glow/25 transition-all flex items-center justify-center gap-2"
                         >
                             <Send size={18} />
                             Send Message

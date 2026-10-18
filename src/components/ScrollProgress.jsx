@@ -8,7 +8,7 @@ const ScrollProgress = () => {
         <motion.div
             aria-hidden="true"
             style={{ scaleX }}
-            className="fixed top-0 left-0 right-0 h-1 origin-left bg-gradient-to-r from-green-600 via-green-500 to-lime-400 z-[60]"
+            className="fixed top-0 left-0 right-0 h-1 origin-left bg-gradient-to-r from-grad-from via-grad-to to-grad-end z-[60]"
         />
     );
 };

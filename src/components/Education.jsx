@@ -18,13 +18,13 @@ const Education = () => {
     ];
 
     return (
-        <section id="education" className="py-20 bg-white">
+        <section id="education" className="py-20 bg-surface">
             <div className="container mx-auto px-6">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-4xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500"
+                    className="text-3xl md:text-4xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-grad-from to-grad-to"
                 >
                     Education
                 </motion.h2>
@@ -36,16 +36,16 @@ const Education = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="bg-green-50/70 p-6 sm:p-8 rounded-2xl border border-green-200 flex items-start gap-6 hover:border-green-400 transition-colors"
+                            className="bg-tint/60 p-6 sm:p-8 rounded-2xl border border-line-strong flex items-start gap-6 hover:border-primary/60 transition-colors"
                         >
-                            <div className="bg-green-100 p-4 rounded-xl text-green-600 hidden sm:block">
+                            <div className="bg-tint p-4 rounded-xl text-primary hidden sm:block">
                                 <GraduationCap size={40} />
                             </div>
 
                             <div>
-                                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">{item.degree}</h3>
-                                <p className="text-green-600 text-lg mb-2">{item.institution}</p>
-                                <p className="text-slate-600 font-mono text-sm">{item.year} · {item.score}</p>
+                                <h3 className="text-xl sm:text-2xl font-bold text-ink mb-2">{item.degree}</h3>
+                                <p className="text-primary text-lg mb-2">{item.institution}</p>
+                                <p className="text-soft font-mono text-sm">{item.year} · {item.score}</p>
                             </div>
                         </motion.div>
                     ))}

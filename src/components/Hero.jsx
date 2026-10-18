@@ -33,9 +33,9 @@ const Hero = () => {
             {/* Background Elements */}
             <div className="absolute inset-0 z-0" aria-hidden="true">
                 <div className="absolute inset-0 bg-grid"></div>
-                <div className="absolute top-20 left-20 w-72 h-72 bg-lime-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
-                <div className="absolute top-20 right-20 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-4000"></div>
+                <div className="absolute top-20 left-20 w-72 h-72 bg-blob1 rounded-full blob filter blur-3xl animate-blob"></div>
+                <div className="absolute top-20 right-20 w-72 h-72 bg-blob2 rounded-full blob filter blur-3xl animate-blob animation-delay-2000"></div>
+                <div className="absolute -bottom-8 left-20 w-72 h-72 bg-blob3 rounded-full blob filter blur-3xl animate-blob animation-delay-4000"></div>
                 <div className="absolute inset-0 spotlight"></div>
             </div>
 
@@ -50,35 +50,35 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
-                        className="text-green-600 font-medium tracking-widest mb-4"
+                        className="text-primary font-medium tracking-widest mb-4"
                     >
                         HELLO, I'M
                     </motion.p>
 
                     <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
-                        <span className="text-slate-900">Balakumaran</span>{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-lime-400 to-green-600 bg-[length:200%_auto] animate-shimmer">R</span>
+                        <span className="text-ink">Balakumaran</span>{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-from via-grad-end to-grad-from bg-[length:200%_auto] animate-shimmer">R</span>
                     </h1>
 
                     <h2 className="text-2xl md:text-3xl mb-4 font-semibold">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">GenAI / AI Engineer</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-from to-grad-to">GenAI / AI Engineer</span>
                     </h2>
 
-                    <p className="text-slate-700 mb-6 font-light text-base md:text-lg">
+                    <p className="text-body mb-6 font-light text-base md:text-lg">
                         {focusAreas.map((area, i) => (
                             <span key={area}>
-                                {i > 0 && <span className="text-slate-500"> • </span>}
+                                {i > 0 && <span className="text-muted"> • </span>}
                                 <button
                                     type="button"
                                     onMouseEnter={() => setActiveFocus(i)}
                                     onFocus={() => setActiveFocus(i)}
-                                    className={`relative transition-colors duration-300 ${activeFocus === i ? 'text-green-700' : 'text-slate-700'}`}
+                                    className={`relative transition-colors duration-300 ${activeFocus === i ? 'text-primary-strong' : 'text-body'}`}
                                 >
                                     {area}
                                     {activeFocus === i && (
                                         <motion.span
                                             layoutId="focus-underline"
-                                            className="absolute left-0 right-0 -bottom-0.5 h-px bg-green-500"
+                                            className="absolute left-0 right-0 -bottom-0.5 h-px bg-brand"
                                         />
                                     )}
                                 </button>
@@ -86,12 +86,12 @@ const Hero = () => {
                         ))}
                     </p>
 
-                    <p className="text-slate-500 mb-8 flex items-center justify-center gap-2 text-sm md:text-base">
-                        <MapPin size={18} className="text-green-600 shrink-0" />
+                    <p className="text-muted mb-8 flex items-center justify-center gap-2 text-sm md:text-base">
+                        <MapPin size={18} className="text-primary shrink-0" />
                         <span>Chennai, India | Open to Relocation</span>
                     </p>
 
-                    <p className="text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed text-lg">
+                    <p className="text-soft mb-10 max-w-2xl mx-auto leading-relaxed text-lg">
                         8 years across generative AI, machine learning and data engineering. Currently building
                         production LLM and agentic AI systems at Johnson Electric.
                     </p>
@@ -101,7 +101,7 @@ const Hero = () => {
                             href="#contact"
                             whileHover={{ scale: 1.04 }}
                             whileTap={{ scale: 0.97 }}
-                            className="px-8 py-4 rounded-full bg-green-600 hover:bg-green-500 text-white font-semibold transition-colors shadow-lg shadow-green-500/25 hover:shadow-green-500/50 flex items-center justify-center gap-2 group"
+                            className="px-8 py-4 rounded-full bg-brand hover:bg-brand-hover text-on-brand font-semibold transition-colors shadow-lg shadow-glow/25 hover:shadow-glow/50 flex items-center justify-center gap-2 group"
                         >
                             <Mail size={20} className="group-hover:scale-110 transition-transform" />
                             Contact Me
@@ -113,7 +113,7 @@ const Hero = () => {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.04 }}
                             whileTap={{ scale: 0.97 }}
-                            className="px-8 py-4 rounded-full bg-white hover:bg-green-50 text-green-800 border border-green-200 hover:border-green-400 font-semibold transition-colors flex items-center justify-center gap-2 group"
+                            className="px-8 py-4 rounded-full bg-surface hover:bg-tint text-primary-strong border border-line-strong hover:border-primary/60 font-semibold transition-colors flex items-center justify-center gap-2 group"
                         >
                             <FileText size={20} className="group-hover:-translate-y-0.5 transition-transform" />
                             Download Resume
@@ -121,13 +121,13 @@ const Hero = () => {
                     </div>
 
                     <div className="mt-16 flex justify-center gap-8">
-                        <a href="https://github.com/bala0423" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-500 hover:text-slate-900 transition-all hover:scale-125 hover:-translate-y-1">
+                        <a href="https://github.com/bala0423" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted hover:text-ink transition-all hover:scale-125 hover:-translate-y-1">
                             <Github size={28} />
                         </a>
-                        <a href="https://www.linkedin.com/in/bala0423/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-500 hover:text-green-700 transition-all hover:scale-125 hover:-translate-y-1">
+                        <a href="https://www.linkedin.com/in/bala0423/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted hover:text-primary-strong transition-all hover:scale-125 hover:-translate-y-1">
                             <Linkedin size={28} />
                         </a>
-                        <a href="mailto:balakumaranrinfo@gmail.com" aria-label="Email" className="text-slate-500 hover:text-green-600 transition-all hover:scale-125 hover:-translate-y-1">
+                        <a href="mailto:balakumaranrinfo@gmail.com" aria-label="Email" className="text-muted hover:text-primary transition-all hover:scale-125 hover:-translate-y-1">
                             <Mail size={28} />
                         </a>
                     </div>
@@ -137,7 +137,7 @@ const Hero = () => {
             <a
                 href="#about"
                 aria-label="Scroll to About"
-                className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-slate-500 hover:text-green-600 transition-colors animate-bounce"
+                className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-muted hover:text-primary transition-colors animate-bounce"
             >
                 <ChevronDown size={32} />
             </a>

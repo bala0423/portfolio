@@ -2,12 +2,143 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Themes. Each value is an RGB triplet used by the Tailwind colour tokens in
+ * tailwind.config.js. The default (no data-theme attribute) is Midnight.
+ * The picker in the navbar sets data-theme on <html>.
+ */
+:root,
+[data-theme='midnight'] {
+  color-scheme: dark;
+  --surface: 9 14 26;
+  --surface-alt: 15 23 42;
+  --ink: 248 250 252;
+  --body: 226 232 240;
+  --soft: 148 163 184;
+  --muted: 100 116 139;
+  --line: 30 41 59;
+  --line-strong: 51 65 85;
+  --primary: 52 211 153;
+  --primary-strong: 110 231 183;
+  --brand: 16 185 129;
+  --brand-hover: 52 211 153;
+  --on-brand: 2 44 34;
+  --tint: 13 51 43;
+  --tint-strong: 6 78 59;
+  --grad-from: 52 211 153;
+  --grad-to: 45 212 191;
+  --grad-end: 163 230 53;
+  --blob1: 16 185 129;
+  --blob2: 20 184 166;
+  --blob3: 132 204 22;
+  --blob-blend: screen;
+  --blob-opacity: 0.14;
+  --glow: 16 185 129;
+  --grid: 148 163 184;
+}
+
+[data-theme='mint'] {
+  color-scheme: light;
+  --surface: 255 255 255;
+  --surface-alt: 240 253 244;
+  --ink: 15 23 42;
+  --body: 51 65 85;
+  --soft: 71 85 105;
+  --muted: 100 116 139;
+  --line: 220 252 231;
+  --line-strong: 187 247 208;
+  --primary: 22 163 74;
+  --primary-strong: 21 128 61;
+  --brand: 22 163 74;
+  --brand-hover: 34 197 94;
+  --on-brand: 255 255 255;
+  --tint: 220 252 231;
+  --tint-strong: 187 247 208;
+  --grad-from: 22 163 74;
+  --grad-to: 16 185 129;
+  --grad-end: 163 230 53;
+  --blob1: 217 249 157;
+  --blob2: 187 247 208;
+  --blob3: 167 243 208;
+  --blob-blend: multiply;
+  --blob-opacity: 0.4;
+  --glow: 34 197 94;
+  --grid: 22 101 52;
+}
+
+[data-theme='sunset'] {
+  color-scheme: light;
+  --surface: 255 251 245;
+  --surface-alt: 255 247 237;
+  --ink: 28 25 23;
+  --body: 68 64 60;
+  --soft: 87 83 78;
+  --muted: 120 113 108;
+  --line: 255 237 213;
+  --line-strong: 254 215 170;
+  --primary: 234 88 12;
+  --primary-strong: 194 65 12;
+  --brand: 234 88 12;
+  --brand-hover: 249 115 22;
+  --on-brand: 255 255 255;
+  --tint: 255 237 213;
+  --tint-strong: 254 215 170;
+  --grad-from: 234 88 12;
+  --grad-to: 225 29 72;
+  --grad-end: 245 158 11;
+  --blob1: 253 230 138;
+  --blob2: 254 215 170;
+  --blob3: 254 205 211;
+  --blob-blend: multiply;
+  --blob-opacity: 0.45;
+  --glow: 249 115 22;
+  --grid: 154 52 18;
+}
+
+[data-theme='lavender'] {
+  color-scheme: light;
+  --surface: 255 255 255;
+  --surface-alt: 245 243 255;
+  --ink: 30 27 75;
+  --body: 51 65 85;
+  --soft: 71 85 105;
+  --muted: 100 116 139;
+  --line: 237 233 254;
+  --line-strong: 221 214 254;
+  --primary: 124 58 237;
+  --primary-strong: 109 40 217;
+  --brand: 124 58 237;
+  --brand-hover: 139 92 246;
+  --on-brand: 255 255 255;
+  --tint: 237 233 254;
+  --tint-strong: 221 214 254;
+  --grad-from: 124 58 237;
+  --grad-to: 219 39 119;
+  --grad-end: 168 85 247;
+  --blob1: 221 214 254;
+  --blob2: 251 207 232;
+  --blob3: 233 213 255;
+  --blob-blend: multiply;
+  --blob-opacity: 0.5;
+  --glow: 139 92 246;
+  --grid: 76 29 149;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-white text-slate-800 font-sans;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.blob {
+  mix-blend-mode: var(--blob-blend);
+  opacity: var(--blob-opacity);
+}
+
+body {
+  @apply bg-surface text-body font-sans;
 }
 
 /* Section anchors land below the fixed navbar. */
@@ -18,8 +149,8 @@ section[id] {
 /* Faint grid behind the hero, fading out toward the edges. */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(22, 101, 52, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(22, 101, 52, 0.07) 1px, transparent 1px);
+    linear-gradient(rgb(var(--grid) / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--grid) / 0.07) 1px, transparent 1px);
   background-size: 48px 48px;
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
@@ -27,7 +158,7 @@ section[id] {
 
 /* Glow that follows the pointer; --x/--y are set from JS. */
 .spotlight {
-  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 40%), rgba(74, 222, 128, 0.12), transparent 70%);
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 40%), rgb(var(--glow) / 0.12), transparent 70%);
   pointer-events: none;
 }
 
@@ -40,7 +171,7 @@ section[id] {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(400px circle at var(--x, 50%) var(--y, 50%), rgba(74, 222, 128, 0.10), transparent 60%);
+  background: radial-gradient(400px circle at var(--x, 50%) var(--y, 50%), rgb(var(--glow) / 0.10), transparent 60%);
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;

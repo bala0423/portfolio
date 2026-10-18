@@ -1,3 +1,11 @@
+// Theme colours are CSS variables (RGB triplets) defined per theme in src/index.css.
+const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+const tokens = [
+  'surface', 'surface-alt', 'ink', 'body', 'soft', 'muted', 'line', 'line-strong',
+  'primary', 'primary-strong', 'brand', 'brand-hover', 'on-brand', 'tint', 'tint-strong',
+  'grad-from', 'grad-to', 'grad-end', 'blob1', 'blob2', 'blob3', 'glow',
+];
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,11 +14,7 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: "#16a34a", // Green 600
-        secondary: "#86efac", // Green 300
-        dark: "#14532d", // Green 900
-      },
+      colors: Object.fromEntries(tokens.map((name) => [name, token(name)])),
       animation: {
         blob: 'blob 14s ease-in-out infinite',
         shimmer: 'shimmer 6s linear infinite',
