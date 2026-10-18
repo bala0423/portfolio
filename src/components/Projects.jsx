@@ -9,7 +9,7 @@ const projects = [
         title: 'Product Knowledge AI Agent',
         category: 'genai',
         status: 'Agentic AI · Production',
-        description: 'Agentic chatbot on Azure OpenAI GPT-5 for ~600 users (500 engineering, 100 quality) to query product information on motors and actuators.',
+        description: 'Agentic chatbot on Azure OpenAI GPT-5 for engineering and quality users to query product information on motors and actuators.',
         points: [
             'Product data modeled in a Neo4j knowledge graph.',
             'Agent functions exposed as FastMCP (Model Context Protocol) tools, orchestrated with Tiny Agents.',
@@ -21,7 +21,7 @@ const projects = [
         title: 'PLM Support Chatbot',
         category: 'genai',
         status: 'GenAI · Production',
-        description: 'End-to-end chatbot over SharePoint pages and wiki docs extracted via Microsoft Graph API. Rolled out to 3,000 users, ~500 active.',
+        description: 'End-to-end chatbot over SharePoint pages and wiki docs extracted via Microsoft Graph API.',
         points: [
             'Started as RAG with Marqo vector DB, Azure OpenAI, LangGraph and FastAPI.',
             'Redesigned to LLM-based retrieval to improve accuracy: GPT-4o mini selects relevant JSON chunks, a GPT-4 agent answers.',
