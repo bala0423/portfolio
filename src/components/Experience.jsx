@@ -6,74 +6,84 @@ const Experience = () => {
     const experiences = [
         {
             company: 'Johnson Electric',
+            location: 'Chennai (Hybrid)',
             role: 'Data Science Engineer',
             duration: 'Jan 2024 - Present',
-            description: 'Leading data science initiatives to optimize manufacturing processes and improve quality control. Developing predictive maintenance models and leveraging GenAI/LLMs for internal automation and knowledge systems.',
+            description: '',
             achievements: [
-                'Spearheaded the development of machine learning models for anomaly detection and predictive quality control.',
-                'Implemented end-to-end data pipelines using Azure and Databricks to process high-velocity telemetry data.',
-                'Created Generative AI-powered search tools to extract insights from engineering documentation.'
+                'Mentor a team of 3 junior engineers; present solutions to stakeholders and work directly with business users.',
+                'Built and run the PLM Support Chatbot and Product Knowledge AI Agent (see Featured Projects).',
+                'Built predictive models on time-series test data.'
             ]
+        },
+        {
+            company: 'Career Break',
+            location: 'Health and well-being',
+            role: 'Career Break',
+            duration: 'Aug 2023 - Jan 2024',
+            description: '',
+            achievements: []
         },
         {
             company: 'Resulticks',
+            location: 'Chennai',
             role: 'Software Engineer',
             duration: 'May 2023 - Aug 2023',
-            description: 'Contributed to the development of real-time marketing automation platforms, focusing on high-throughput data processing and application reliability.',
+            description: '',
             achievements: [
-                'Optimized API performance and reduced latency for high-traffic messaging endpoints.',
-                'Enhanced core features of the marketing automation pipeline using Node.js and SQL/NoSQL databases.',
-                'Participated in database schema design and optimized query execution paths for customer profiles.'
+                'Built ETL pipelines on Google Cloud Platform, loading and processing data in BigQuery.'
             ]
         },
         {
-            company: 'bitsCrunch',
+            company: 'bitsCrunch (Germany)',
+            location: 'Remote from India',
             role: 'Data Engineer',
             duration: 'Jun 2022 - Apr 2023',
-            description: 'Designed and built scalable data infrastructure for blockchain analytics, focused on processing decentralized data and NFT transaction histories.',
+            description: '',
             achievements: [
-                'Architected high-throughput data ingestion pipelines to index and process blockchain transactions.',
-                'Engineered real-time and batch pipelines using Python, Apache Spark, and cloud data warehouses.',
-                'Ensured data quality and consistency across multi-chain data sources for wash trading detection.'
+                'Built real-time Kafka streaming pipelines ingesting multi-chain blockchain data (NFTs, digital assets) into Azure Blob Storage.',
+                'Cleaned and preprocessed blockchain data with PySpark on Azure Databricks.',
+                "Maintained Airflow pipelines supporting the company's NFT analytics platform."
             ]
         },
         {
-            company: 'Optisol Business Solutions',
+            company: 'OptiSol Business Solutions',
+            location: 'Chennai',
             role: 'Data Engineer',
             duration: 'Sep 2021 - Jun 2022',
-            description: 'Developed robust ETL/ELT pipelines and managed cloud data warehouse solutions for enterprise clients.',
+            description: 'Nutrien (Australia) enterprise data lake.',
             achievements: [
-                'Designed data integration workflows to migrate legacy databases to AWS/Azure cloud platforms.',
-                'Optimized complex SQL queries and data transformations to reduce processing costs and execution time.',
-                'Implemented comprehensive data validation frameworks to monitor pipeline health.'
+                'Built Spark pipelines on Azure Databricks migrating data from SAP, Plasma, FMIS, Rewards, PostgreSQL and AWS S3 into Delta Lake tables.',
+                'Built data dictionaries.'
             ]
         },
         {
-            company: 'Optisol Business Solutions',
+            company: 'OptiSol Business Solutions',
+            location: 'Chennai',
             role: 'Machine Learning Engineer',
             duration: 'Aug 2019 - Sep 2021',
-            description: 'Built, evaluated, and deployed machine learning models to solve business problems in computer vision and natural language processing.',
+            description: '',
             achievements: [
-                'Trained and deployed object detection and classification models for automated visual inspection.',
-                'Developed NLP pipelines using BERT and custom transformer architectures for document parsing.',
-                'Created Flask/FastAPI microservices to serve model predictions in production environments.'
+                'MachineVantage (USA): Flask REST APIs on AWS with Jenkins, ~1 TB of MongoDB data, Airflow pipelines and API monitoring.',
+                'MachineVantage (USA): Azure Data Factory ETL and OLAP cubes with Power BI.',
+                'E-Watercooler (USA): Rasa NLU chatbot in Microsoft Teams using Microsoft Graph API to schedule group calls; Docker, Jenkins, Azure Key Vault.'
             ]
         },
         {
-            company: 'Trumatics Software labs',
+            company: 'Trumatics Software Labs',
+            location: 'Chennai',
             role: 'Software Engineer',
             duration: 'Jun 2018 - Jul 2019',
-            description: 'Started professional journey by developing web applications and backend systems using Python and Java.',
+            description: '',
             achievements: [
-                'Developed RESTful APIs and backend services using Django/Spring Boot frameworks.',
-                'Collaborated on frontend interface development with React and modern JavaScript.',
-                'Participated in agile ceremonies, writing unit tests and code documentation to improve codebase reliability.'
+                'Decision tree price prediction model in Python, served via Flask API on Linux and Heroku.',
+                'Selenium API testing.'
             ]
         }
     ];
 
     return (
-        <section id="experience" className="py-20 bg-slate-950">
+        <section id="experience" className="py-20 bg-slate-950 overflow-hidden">
             <div className="container mx-auto px-6">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -108,15 +118,22 @@ const Experience = () => {
                                         <Briefcase className="text-cyan-400" size={20} />
                                         <h3 className="text-xl font-bold text-white">{exp.role}</h3>
                                     </div>
-                                    <h4 className="text-lg text-cyan-400 mb-1">{exp.company}</h4>
-                                    <p className="text-sm text-slate-500 mb-4 font-mono">{exp.duration}</p>
-                                    <p className="text-slate-400 mb-4 text-sm leading-relaxed">{exp.description}</p>
-                                    <ul className={`text-slate-400 text-sm space-y-2 list-disc inline-block text-left ${index % 2 === 0 ? 'md:text-right' : ''}`}>
-                                        {/* List alignment trick: always nice to have bullets left aligned inside the block, but for proper RTL feel on left side, maybe standard is better */}
-                                        {exp.achievements.map((item, i) => (
-                                            <li key={i} className="ml-4">{item}</li>
-                                        ))}
-                                    </ul>
+                                    {exp.company !== exp.role && (
+                                        <h4 className="text-lg text-cyan-400 mb-1">{exp.company}</h4>
+                                    )}
+                                    <p className="text-sm text-slate-500 mb-4 font-mono">
+                                        {exp.duration}{exp.location ? ` · ${exp.location}` : ''}
+                                    </p>
+                                    {exp.description && (
+                                        <p className="text-slate-400 mb-4 text-sm leading-relaxed">{exp.description}</p>
+                                    )}
+                                    {exp.achievements.length > 0 && (
+                                        <ul className={`text-slate-400 text-sm space-y-2 list-disc inline-block text-left ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+                                            {exp.achievements.map((item, i) => (
+                                                <li key={i} className="ml-4">{item}</li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>

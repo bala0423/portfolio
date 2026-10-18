@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Send } from 'lucide-react';
+import { Mail, Linkedin, Send, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
@@ -34,9 +34,31 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3 className="text-white font-semibold mb-1">Email Me</h3>
-                                <a href="mailto:balakumaranrinfo@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                                <a href="mailto:balakumaranrinfo@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors break-all">
                                     balakumaranrinfo@gmail.com
                                 </a>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start gap-4">
+                            <div className="bg-slate-800 p-3 rounded-lg text-cyan-400">
+                                <Phone size={24} />
+                            </div>
+                            <div>
+                                <h3 className="text-white font-semibold mb-1">Phone</h3>
+                                <a href="tel:+919677266036" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                                    +91 96772 66036
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start gap-4">
+                            <div className="bg-slate-800 p-3 rounded-lg text-cyan-400">
+                                <MapPin size={24} />
+                            </div>
+                            <div>
+                                <h3 className="text-white font-semibold mb-1">Location</h3>
+                                <p className="text-slate-400">Chennai, India | Open to Relocation</p>
                             </div>
                         </div>
 
@@ -67,7 +89,7 @@ const Contact = () => {
                         className="space-y-4"
                         action="mailto:balakumaranrinfo@gmail.com"
                         method="POST"
-                        enctype="text/plain"
+                        encType="text/plain"
                     >
                         <div>
                             <input

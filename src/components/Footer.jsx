@@ -16,8 +16,8 @@ const Footer = () => {
                         <Mail size={20} />
                     </a>
                 </div>
-                <p className="text-slate-600 text-sm">
-                    © {new Date().getFullYear()} Bala Kumaran. All rights reserved.
+                <p className="text-slate-600 text-sm" suppressHydrationWarning>
+                    © {new Date().getFullYear()} Balakumaran R. All rights reserved.
                 </p>
             </div>
         </footer>
