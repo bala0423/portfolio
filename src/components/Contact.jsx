@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, Linkedin, Send, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
