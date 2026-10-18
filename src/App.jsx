@@ -15,7 +15,7 @@ function App() {
   return (
     // reducedMotion="user" turns off transform animations for visitors who prefer reduced motion.
     <MotionConfig reducedMotion="user">
-      <div className="bg-slate-900 text-slate-200">
+      <div className="bg-white text-slate-800">
         <ScrollProgress />
         <Navbar />
         <Hero />

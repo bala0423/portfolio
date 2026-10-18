@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply bg-slate-900 text-white font-sans;
+  @apply bg-white text-slate-800 font-sans;
 }
 
 /* Section anchors land below the fixed navbar. */
@@ -18,8 +18,8 @@ section[id] {
 /* Faint grid behind the hero, fading out toward the edges. */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(22, 101, 52, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 101, 52, 0.07) 1px, transparent 1px);
   background-size: 48px 48px;
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
@@ -27,7 +27,7 @@ section[id] {
 
 /* Glow that follows the pointer; --x/--y are set from JS. */
 .spotlight {
-  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 40%), rgba(34, 211, 238, 0.12), transparent 70%);
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 40%), rgba(74, 222, 128, 0.12), transparent 70%);
   pointer-events: none;
 }
 
@@ -40,7 +40,7 @@ section[id] {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(400px circle at var(--x, 50%) var(--y, 50%), rgba(34, 211, 238, 0.10), transparent 60%);
+  background: radial-gradient(400px circle at var(--x, 50%) var(--y, 50%), rgba(74, 222, 128, 0.10), transparent 60%);
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;

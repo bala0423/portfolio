@@ -32,7 +32,7 @@ const Counter = ({ value, prefix = '' }) => {
 
 const About = () => {
     return (
-        <section id="about" className="py-20 bg-slate-900">
+        <section id="about" className="py-20 bg-white">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -40,19 +40,19 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">
                         About Me
                     </h2>
 
-                    <div className="max-w-4xl mx-auto text-slate-300 leading-relaxed space-y-6 text-lg">
+                    <div className="max-w-4xl mx-auto text-slate-700 leading-relaxed space-y-6 text-lg">
                         <p>
-                            <span className="text-cyan-400 font-semibold">AI Engineer</span> with <span className="font-semibold text-white">8 years</span> of experience across generative AI, machine learning and data engineering.
+                            <span className="text-green-600 font-semibold">AI Engineer</span> with <span className="font-semibold text-slate-900">8 years</span> of experience across generative AI, machine learning and data engineering.
                         </p>
                         <p>
-                            Currently at <span className="font-semibold text-white">Johnson Electric</span>, building production <span className="text-purple-400 font-semibold">LLM and agentic AI systems</span>: a PLM support chatbot rolled out to <span className="text-white">3,000 users (~500 active)</span>, and an MCP-based AI agent on Azure OpenAI GPT-5 with a Neo4j knowledge graph serving <span className="text-white">~600 engineering and quality users</span>.
+                            Currently at <span className="font-semibold text-slate-900">Johnson Electric</span>, building production <span className="text-emerald-600 font-semibold">LLM and agentic AI systems</span>: a PLM support chatbot rolled out to <span className="text-slate-900">3,000 users (~500 active)</span>, and an MCP-based AI agent on Azure OpenAI GPT-5 with a Neo4j knowledge graph serving <span className="text-slate-900">~600 engineering and quality users</span>.
                         </p>
                         <p>
-                            Strong data engineering foundation in <span className="text-white">Databricks, PySpark, Kafka and Airflow</span>. Mentors junior engineers and works directly with business stakeholders.
+                            Strong data engineering foundation in <span className="text-slate-900">Databricks, PySpark, Kafka and Airflow</span>. Mentors junior engineers and works directly with business stakeholders.
                         </p>
                     </div>
                 </motion.div>
@@ -66,12 +66,12 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
                             whileHover={{ y: -6 }}
-                            className="p-5 rounded-2xl bg-slate-800/40 border border-slate-700/70 hover:border-cyan-500/60 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] transition-colors text-center"
+                            className="p-5 rounded-2xl bg-white border border-green-200 hover:border-green-400 hover:shadow-[0_0_25px_rgba(34,197,94,0.15)] transition-colors text-center"
                         >
-                            <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                            <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
                                 <Counter value={stat.value} prefix={stat.prefix} />
                             </div>
-                            <p className="mt-2 text-xs sm:text-sm text-slate-400 uppercase tracking-wider">{stat.label}</p>
+                            <p className="mt-2 text-xs sm:text-sm text-slate-600 uppercase tracking-wider">{stat.label}</p>
                         </motion.div>
                     ))}
                 </div>

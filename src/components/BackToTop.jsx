@@ -22,7 +22,7 @@ const BackToTop = () => {
                     exit={{ opacity: 0, scale: 0.6, y: 20 }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="fixed right-4 bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] sm:right-8 sm:bottom-8 z-50 p-3 rounded-full bg-cyan-600 hover:bg-cyan-500 text-white shadow-lg shadow-cyan-500/30"
+                    className="fixed right-4 bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] sm:right-8 sm:bottom-8 z-50 p-3 rounded-full bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-500/30"
                 >
                     <ArrowUp size={20} />
                 </motion.a>

@@ -42,9 +42,9 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/90 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
+        <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <a href="#home" aria-label="Back to top" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-purple-500 transition-colors">
+                <a href="#home" aria-label="Back to top" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500 hover:from-emerald-500 hover:to-lime-400 transition-colors">
                     BK
                 </a>
 
@@ -54,13 +54,13 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className={`relative py-1 transition-colors text-sm uppercase tracking-wider font-medium ${active === link.href ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'}`}
+                            className={`relative py-1 transition-colors text-sm uppercase tracking-wider font-medium ${active === link.href ? 'text-green-600' : 'text-slate-700 hover:text-green-600'}`}
                         >
                             {link.name}
                             {active === link.href && (
                                 <motion.span
                                     layoutId="nav-underline"
-                                    className="absolute left-0 right-0 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500"
+                                    className="absolute left-0 right-0 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-green-600 to-emerald-500"
                                 />
                             )}
                         </a>
@@ -69,7 +69,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-slate-300 hover:text-white"
+                    className="md:hidden text-slate-700 hover:text-slate-900"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label={isOpen ? 'Close menu' : 'Open menu'}
                     aria-expanded={isOpen}
@@ -85,7 +85,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 overflow-hidden"
+                        className="md:hidden bg-white/95 backdrop-blur-lg border-t border-green-100 overflow-hidden"
                     >
                         <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
                             {navLinks.map((link, i) => (
@@ -95,7 +95,7 @@ const Navbar = () => {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: i * 0.04 }}
-                                    className={`transition-colors block py-2 ${active === link.href ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'}`}
+                                    className={`transition-colors block py-2 ${active === link.href ? 'text-green-600' : 'text-slate-700 hover:text-green-600'}`}
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}

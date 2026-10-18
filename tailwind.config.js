@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0ea5e9", // Sky 500
-        secondary: "#6366f1", // Indigo 500
-        dark: "#0f172a", // Slate 900
+        primary: "#16a34a", // Green 600
+        secondary: "#86efac", // Green 300
+        dark: "#14532d", // Green 900
       },
       animation: {
         blob: 'blob 14s ease-in-out infinite',

@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
-    <!-- Cyan to Blue gradient for borders and text -->
+    <!-- Green gradient for borders and text -->
     <linearGradient id="rbk-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#22d3ee" /> <!-- cyan-400 -->
-      <stop offset="100%" stop-color="#3b82f6" /> <!-- blue-500 -->
+      <stop offset="0%" stop-color="#22c55e" /> <!-- green-500 -->
+      <stop offset="100%" stop-color="#15803d" /> <!-- green-700 -->
     </linearGradient>
     
-    <!-- Deep background gradient for matching dark theme -->
+    <!-- Light background gradient matching the white and green theme -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020617" /> <!-- slate-950 -->
-      <stop offset="100%" stop-color="#0f172a" /> <!-- slate-900 -->
+      <stop offset="0%" stop-color="#ffffff" /> <!-- white -->
+      <stop offset="100%" stop-color="#f0fdf4" /> <!-- green-50 -->
     </linearGradient>
 
     <!-- Subtle drop shadow/glow -->
@@ -23,7 +23,7 @@
   <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#bg-grad)" stroke="url(#rbk-grad)" stroke-width="16" />
 
   <!-- Glowing background effect behind letters -->
-  <circle cx="256" cy="256" r="160" fill="#22d3ee" opacity="0.04" filter="url(#glow)" />
+  <circle cx="256" cy="256" r="160" fill="#4ade80" opacity="0.08" filter="url(#glow)" />
 
   <!-- Monogram text "RBK" styled and centered -->
   <text x="256" y="278" 
