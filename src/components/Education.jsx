@@ -6,14 +6,12 @@ const Education = () => {
         {
             degree: 'M.E., Systems Engineering and Operations Research',
             institution: 'College of Engineering, Guindy (CEG), Anna University, Chennai',
-            year: '2018',
-            score: '79%'
+            year: '2018'
         },
         {
             degree: 'B.E., Computer Science and Engineering',
             institution: 'Meenakshi Academy of Higher Education and Research, Chennai',
-            year: '2015',
-            score: '80%'
+            year: '2015'
         }
     ];
 
@@ -45,7 +43,7 @@ const Education = () => {
                             <div>
                                 <h3 className="text-xl sm:text-2xl font-bold text-ink mb-2">{item.degree}</h3>
                                 <p className="text-primary text-lg mb-2">{item.institution}</p>
-                                <p className="text-soft font-mono text-sm">{item.year} · {item.score}</p>
+                                <p className="text-soft font-mono text-sm">{item.year}</p>
                             </div>
                         </motion.div>
                     ))}
